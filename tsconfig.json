@@ -1,0 +1,17 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "constanst/*": ["src/contants/*"],
+      "assets/*": ["src/assets/*"],
+      "components/*": ["src/components/*"],
+      "dommy/*": ["src/dommyData/*"],
+      "pages/*": ["src/pages/*"],
+      "interfaces/*": ["src/types/*"],
+      "utils/*": ["src/utils/*"]
+    }
+  }
+}
