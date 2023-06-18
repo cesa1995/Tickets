@@ -6,9 +6,10 @@ import {
   RowView,
   Segment,
   UserDataTitle,
+  padding,
 } from './comsponents';
 import {Text} from 'components/staticComponents';
-const Ws = require('src/assets/ws.png');
+const Ws = require('assets/ws.png');
 
 const CustomerInfo: FC<{
   userName: String;
@@ -19,9 +20,9 @@ const CustomerInfo: FC<{
     <Segment>
       <ColumnView>
         <UserDataTitle>Customer Info:</UserDataTitle>
-        <RowView margin={false}>
+        <RowView customPadding={padding}>
           <DataText>{userName}</DataText>
-          <RowView margin={false}>
+          <RowView>
             <Icon source={Ws} />
             <Text>{`${phoneNumbers}`}</Text>
           </RowView>

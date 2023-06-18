@@ -11,7 +11,8 @@
       "dommy/*": ["src/dommyData/*"],
       "pages/*": ["src/pages/*"],
       "interfaces/*": ["src/types/*"],
-      "utils/*": ["src/utils/*"]
+      "utils/*": ["src/utils/*"],
+      "context/*": ["src/context/*"]
     }
   }
 }

@@ -2,7 +2,7 @@ import React, {FC, useMemo} from 'react';
 import {styled} from 'styled-components/native';
 import {ticket} from 'interfaces/tickets';
 import moment from 'moment';
-import {Text} from './staticComponents';
+import {Text} from 'components/staticComponents';
 import colors from 'constanst/colors';
 import {windowHeight} from 'constanst/dimentions';
 import {useNavigation} from '@react-navigation/native';

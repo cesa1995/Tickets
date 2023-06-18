@@ -1,14 +1,17 @@
-import React, {FC} from 'react';
+import React, {FC, useContext} from 'react';
 import {styled} from 'styled-components/native';
-import TopMenuIcon from './topMenuIcon';
+import TopMenuIcon from '../../../../components/topMenuIcon';
 import {windowWidth} from 'constanst/dimentions';
 import colors from 'constanst/colors';
+import {useNavigation} from '@react-navigation/native';
+import {NavigationProp} from 'src/types/RootStackParams';
+import {DefaultUserContext, UserContext} from 'src/context/userContext';
 
-const CandelarIcon = require('src/assets/calendar.png');
-const menuIcon = require('src/assets/menu.png');
-const newTicketIcon = require('src/assets/newTicket.png');
-const smallIcon = require('src/assets/smallLogo.png');
-const syncIcon = require('src/assets/sync.png');
+const CandelarIcon = require('assets/calendar.png');
+const menuIcon = require('assets/menu.png');
+const newTicketIcon = require('assets/newTicket.png');
+const smallIcon = require('assets/smallLogo.png');
+const syncIcon = require('assets/sync.png');
 
 const Container = styled.View`
   flex-direction: row;
@@ -42,6 +45,8 @@ const Logo = styled.Image`
 `;
 
 const TopMenu: FC = () => {
+  const {setIsLogged} = useContext(UserContext) as DefaultUserContext;
+  const navigation = useNavigation<NavigationProp>();
   const goToCalendar = () => {
     console.log('go to Calendar');
   };
@@ -50,12 +55,10 @@ const TopMenu: FC = () => {
     console.log('go to Sync');
   };
 
-  const goToNewTicket = () => {
-    console.log('go to New ticket');
-  };
+  const goToNewTicket = () => navigation.navigate('AddTicket');
 
   const goToMenu = () => {
-    console.log('go to Menu');
+    setIsLogged(false);
   };
   return (
     <Container>

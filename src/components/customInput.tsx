@@ -1,6 +1,7 @@
-import React, {FC, useState} from 'react';
+import React, {Dispatch, FC, SetStateAction, useState} from 'react';
 import colors from 'constanst/colors';
 import styled from 'styled-components/native';
+import {KeyboardTypeOptions} from 'react-native';
 
 const Input = styled.TextInput<{isFocus: Boolean}>`
   border-color: ${({isFocus}) => (isFocus ? colors.greenColor : colors.grey)};
@@ -13,17 +14,23 @@ const Input = styled.TextInput<{isFocus: Boolean}>`
 `;
 type input = {
   placeholderText: string;
+  setValue: (text: string) => void | Dispatch<SetStateAction<String>>;
+  type?: KeyboardTypeOptions;
+  value: string | String | number;
 };
 
-const CustomInput: FC<input> = ({placeholderText}) => {
+const CustomInput: FC<input> = ({placeholderText, setValue, type, value}) => {
   const [focusUserName, setFocusName] = useState(false);
 
   return (
     <Input
+      keyboardType={type}
       placeholder={placeholderText}
       onFocus={() => setFocusName(true)}
       onBlur={() => setFocusName(false)}
       isFocus={focusUserName}
+      onChangeText={event => setValue(event)}
+      value={`${value ?? ''}`}
     />
   );
 };

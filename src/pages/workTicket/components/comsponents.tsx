@@ -3,17 +3,19 @@ import {windowWidth} from 'constanst/dimentions';
 import colors from 'constanst/colors';
 import {getFontSize} from 'utils/fonts';
 
+const padding = '10px';
+
 const Segment = styled.View`
   justify-content: space-between;
   width: 100%;
-  flex-direction: ${windowWidth > 400 ? 'row' : 'column'};
+  flex-direction: ${windowWidth > 450 ? 'row' : 'column'};
   background-color: #fff;
   padding: 10px 5px 0 5px;
 `;
 
-const RowView = styled.View<{margin: boolean}>`
+const RowView = styled.View<{customPadding?: string}>`
   flex-direction: row;
-  padding: ${({margin}) => (margin ? '10px' : '0')};
+  padding: ${({customPadding}) => customPadding ?? '0px'};
 `;
 
 const ColumnView = styled.View`
@@ -40,4 +42,4 @@ const Icon = styled.Image`
   padding: 0;
 `;
 
-export {Segment, RowView, ColumnView, UserDataTitle, DataText, Icon};
+export {Segment, RowView, ColumnView, UserDataTitle, DataText, Icon, padding};

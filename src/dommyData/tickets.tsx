@@ -1,5 +1,6 @@
 export default [
   {
+    id: 0,
     name: 'Sink Repair',
     address: '37 Greennight Cres Waterloo, ON N2R 4K8',
     dateStamp: 1686957930,
@@ -13,12 +14,20 @@ export default [
     classDept: 'Plumbing',
     serviceType: 'Call Back',
     resonForCall: [
-      '- Customer has noticed extremely low water pressure from the sink.',
-      '- Precesion Tune up',
-      '- Estimate for panel upgrade',
+      {
+        id: 0,
+        text: '- Customer has noticed extremely low water pressure from the sink.',
+      },
+      {id: 1, text: '- Precesion Tune up'},
+      {id: 2, text: '- Estimate for panel upgrade'},
     ],
+    coordinates: {
+      lon: -115.235562,
+      lat: 36.075406,
+    },
   },
   {
+    id: 1,
     name: 'Water Heater Installation',
     address: '11 Westnight Ave Toronto. ON N7L 1X1',
     dateStamp: 1686957930,
@@ -32,12 +41,20 @@ export default [
     classDept: 'Plumbing',
     serviceType: 'Call Back',
     resonForCall: [
-      '- Customer has noticed extremely low water pressure from the sink.',
-      '- Precesion Tune up',
-      '- Estimate for panel upgrade',
+      {
+        id: 0,
+        text: '- Customer has noticed extremely low water pressure from the sink.',
+      },
+      {id: 1, text: '- Precesion Tune up'},
+      {id: 2, text: '- Estimate for panel upgrade'},
     ],
+    coordinates: {
+      lon: -101.787175,
+      lat: 35.118344,
+    },
   },
   {
+    id: 2,
     name: 'Drain Cleaning',
     address: '7 Hedgestill Street Guelph, ON N2D 7LO',
     dateStamp: 1686957930,
@@ -51,9 +68,16 @@ export default [
     classDept: 'Plumbing',
     serviceType: 'Call Back',
     resonForCall: [
-      '- Customer has noticed extremely low water pressure from the sink.',
-      '- Precesion Tune up',
-      '- Estimate for panel upgrade',
+      {
+        id: 0,
+        text: '- Customer has noticed extremely low water pressure from the sink.',
+      },
+      {id: 1, text: '- Precesion Tune up'},
+      {id: 2, text: '- Estimate for panel upgrade'},
     ],
+    coordinates: {
+      lon: -106.197302,
+      lat: 31.646001,
+    },
   },
 ];

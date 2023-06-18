@@ -6,13 +6,13 @@ import {ScrollView} from 'react-native';
 import {styled} from 'styled-components/native';
 import moment from 'moment';
 import colors from 'constanst/colors';
-import TopMenuIcon from '../dashboard/components/TopMenu/topMenuIcon';
+import TopMenuIcon from '../../components/topMenuIcon';
 import CustomerInfo from './components/customerInfo';
 import TicketInfo from './components/ticketInfo';
 import Notes from './components/notes';
 
-const menuIcon = require('src/assets/menu.png');
-const GoBackIcon = require('src/assets/goBack.png');
+const menuIcon = require('assets/menu.png');
+const GoBackIcon = require('assets/goBack.png');
 
 type Props = NativeStackScreenProps<RootStackParamsList, 'WorkTicket'>;
 
@@ -63,6 +63,7 @@ const WorkTicket: FC<Props> = ({route, navigation}) => {
         distance={item.distance}
         serviceType={item.serviceType}
         timer={item.timer}
+        coordinatesProps={item.coordinates}
       />
       <Space />
       <Notes number={item.number} resonForCall={item.resonForCall} />

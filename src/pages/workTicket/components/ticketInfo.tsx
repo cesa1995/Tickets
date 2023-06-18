@@ -6,16 +6,20 @@ import {
   RowView,
   Segment,
   UserDataTitle,
+  padding,
 } from './comsponents';
 import {styled} from 'styled-components/native';
 import colors from 'constanst/colors';
 import {windowWidth} from 'constanst/dimentions';
 import {getFontSize} from 'utils/fonts';
 import {Text} from 'components/staticComponents';
+import {useNavigation} from '@react-navigation/native';
+import {NavigationProp} from 'src/types/RootStackParams';
+import {coordinates} from 'src/types/tickets';
 
-const Distance = require('src/assets/distance.png');
-const Schedule = require('src/assets/schedule.png');
-const Position = require('src/assets/positio.png');
+const Distance = require('assets/distance.png');
+const Schedule = require('assets/schedule.png');
+const Position = require('assets/positio.png');
 
 const Border = styled.View`
   width: 100%;
@@ -23,8 +27,8 @@ const Border = styled.View`
 `;
 
 const ContainerLimit = styled.View`
-  width: ${windowWidth > 400 ? '50%' : '100%'};
-  height: ${windowWidth > 400 ? '100%' : 'auto'};
+  width: ${windowWidth > 450 ? '50%' : '100%'};
+  height: ${windowWidth > 450 ? '100%' : 'auto'};
   border: 0.3px solid #000;
 `;
 
@@ -60,43 +64,54 @@ const TicketInfo: FC<{
   dispatchNote: String;
   classDept: String;
   serviceType: String;
-}> = ({address, classDept, dispatchNote, distance, serviceType, timer}) => {
+  coordinatesProps: coordinates;
+}> = ({
+  address,
+  classDept,
+  dispatchNote,
+  distance,
+  serviceType,
+  timer,
+  coordinatesProps,
+}) => {
+  const navigation = useNavigation<NavigationProp>();
+
   return (
     <Segment>
       <ContainerLimit>
-        <RowView margin={true}>
+        <RowView customPadding={padding}>
           <ColumnView>
-            <RowView margin={false}>
+            <RowView>
               <Icon source={Position} />
               <UserDataTitle>Job Site Address:</UserDataTitle>
             </RowView>
             <Address>{address}</Address>
-            <RowView margin={false}>
+            <RowView>
               <Icon source={Distance} />
               <UserDataTitle>Distance:</UserDataTitle>
             </RowView>
             <DataText>{`Approx. ${timer} Minutes`}</DataText>
             <UserDataTitle>{`${distance} miles`}</UserDataTitle>
           </ColumnView>
-          <Button>
+          <Button onPress={() => navigation.navigate('Map', coordinatesProps)}>
             <ButtonText>Get Directions</ButtonText>
           </Button>
         </RowView>
       </ContainerLimit>
       <ContainerLimit>
         <ColumnView>
-          <RowView margin={true}>
+          <RowView customPadding={padding}>
             <Icon source={Schedule} />
             <UserDataTitle>Dispatch Note:</UserDataTitle>
           </RowView>
           <DispachText>{dispatchNote}</DispachText>
           <Border />
-          <RowView margin={true}>
-            <RowView margin={false}>
+          <RowView customPadding={padding}>
+            <RowView>
               <UserDataTitle>Dept. Class:</UserDataTitle>
               <DataText>{classDept}</DataText>
             </RowView>
-            <RowView margin={false}>
+            <RowView>
               <UserDataTitle>Service Type:</UserDataTitle>
               <DataText>{serviceType}</DataText>
             </RowView>
