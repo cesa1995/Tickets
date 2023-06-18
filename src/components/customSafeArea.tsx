@@ -1,3 +1,5 @@
+//context to ensure a safe area where the app components do not overlap with the internal interface of the phone.
+
 import React, {FC} from 'react';
 import {
   ColorValue,

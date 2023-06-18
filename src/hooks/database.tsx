@@ -1,3 +1,5 @@
+//functions that manage the database
+
 import {
   enablePromise,
   openDatabase,

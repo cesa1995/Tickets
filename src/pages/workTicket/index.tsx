@@ -1,3 +1,4 @@
+//page showing ticket details
 import React, {FC, useMemo} from 'react';
 import CustomSafeArea from 'components/customSafeArea';
 import {RootStackParamsList} from 'interfaces/RootStackParams';

@@ -1,3 +1,5 @@
+//the session context for hosting user data
+
 import React, {
   Dispatch,
   FC,

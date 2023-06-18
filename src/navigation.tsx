@@ -1,3 +1,5 @@
+//the navigation of the app is defined in login groups and app main
+
 import React, {FC, useContext} from 'react';
 import login from 'src/pages/login';
 import Dashboard from 'pages/dashboard';

@@ -1,3 +1,5 @@
+//login page
+
 import React, {FC, useContext, useState} from 'react';
 import CustomSafeArea from 'components/customSafeArea';
 import styled from 'styled-components/native';

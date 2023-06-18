@@ -1,3 +1,5 @@
+//general app colors
+
 export default {
   backgroundColor: '#fff',
   White: '#f9f9fa',

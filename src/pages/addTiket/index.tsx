@@ -1,3 +1,5 @@
+//page that creates and edits a new ticket
+
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {FC, useState} from 'react';
 import {ScrollView} from 'react-native';

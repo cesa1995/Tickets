@@ -1,3 +1,4 @@
+//MAP PAGE
 import React, {FC} from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamsList} from 'src/types/RootStackParams';
