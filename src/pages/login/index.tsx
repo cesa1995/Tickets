@@ -30,6 +30,7 @@ const Background = styled.View`
 const Container = styled.View`
   height: 100%;
   width: 90%;
+  max-width: 400px;
   justify-content: center;
   align-items: center;
 `;
